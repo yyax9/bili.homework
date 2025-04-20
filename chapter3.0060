@@ -1,0 +1,51 @@
+public class Homework02 {
+
+    public static void main(String[] args) {
+
+        char c1 = '\n';
+        char c2 = '\t';
+        char c3 = '\r';
+        char c4 = '\\';
+        char c5 = '1';
+        char c6 = '2';
+        char c7 = '3';
+        System.out.println(c1);
+        System.out.println(c2);
+        System.out.println(c3);
+        System.out.println(c4);
+        System.out.println(c5);
+        System.out.println(c6);
+        System.out.println(c7);
+    }
+}
+
+public class Homework03 {
+
+    public static void main(String[] args) {
+
+        String book1 = "天龙八部";
+        String book2 = "笑傲江湖";
+        System.out.println(book1 + book2);
+        
+        char c1 = '男';
+        char c2 = '女';
+        System.out.println(c1 + c2);
+        
+        double price1 = 123.56;
+        double price2 = 100.11;
+        System.out.println(price1 + price2);
+    }
+}
+
+public class Homework04 {
+
+    public static void main(String[] args) {
+        String name = "jack";
+        int age = 20;
+        double score = 80.9;
+        char gender = '男';
+        String hobby = "打篮球";
+        System.out.println("姓名\t年龄\t成绩\t性别\t爱好\n" + name + "\t"
+            + age + "\t" + score + "\t" + gender + "\t" + hobby);
+    }
+}
