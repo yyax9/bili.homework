@@ -1,0 +1,64 @@
+(1)
+protected void service(HttpServletRequest request, HttpServletResponse response)
+       HttpMethod httpMethod = HttpMethod.resolve(request.getMethod());
+       if (httpMethod != HttpMethod.PATCH && httpMethod != null) {
+           super.service(request,response);
+       } else {
+           this.processRequest(request, response);
+       }
+
+}
+
+(2)
+boolean applyPreHandle(HttpservletRequest request, HttpServletResponse response) throws
+        HandlerInterceptor[] interceptors = this.getInterceptors();
+        if (!ObjectUtils.isEmpty(interceptors)) {
+            for(int i = 0; i < interceptors.length; this.interceptorIndex = i++) {
+                HandlerInterceptor interceptor = interceptors[i];
+                if (!interceptor.preHandle(request, response, this.handler)) {
+                    this.triggerAfterCompletion(request, response, (Exception)null);
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+(3)
+public static void startApkActivity(final Context ctx, String packageName) {
+   PackageManager pm = ctx.getPackageManager();
+   PackageInfo pi;
+   try {
+       pi = pm.getPackageInfo(packageName,0);
+       Intent intent = new Intent(Intent.ACTION_MAIN, null);
+       intent.addCategory(Intent.CATEGORY_LAUNCHER);
+       intent.setPackage(pi.packageName);List<ResolveInfo> apps = pm.queryIntentActivities
+
+       ResolveInfo ri = apps.iterator().next();
+       if (ri != null) {
+             String className = ri.activityInfo.name;
+             intent.setComponent(new ComponentName(packageName, className));
+             ctx.startActivity(intent);
+       }
+   } catch (NameNotFoundException e) {
+       Log.e("startActivity", e);
+   }
+}
+
+(4)
+public static class IntSumReducer
+  extends Reducer<Text,IntWritable,Text,IntWritable> {
+ private IntWritable result = new IntWritable();
+ 
+ public void reduce(Text key, Iterable<IntWritable> values,
+             Context context
+             ) throws IOException, InterruptedException {
+  int sum = 0;
+  for (IntWritable val : values) {
+   sum + = val.get();
+  }
+  result.set(sum);
+  context.write(key,result);
+ }
+}
