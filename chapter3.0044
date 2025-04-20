@@ -1,4 +1,4 @@
-public class Vardetail {
+public class FloatDetail {
 
     public static void main(String[] args) {
         double num11 = 2.7;
