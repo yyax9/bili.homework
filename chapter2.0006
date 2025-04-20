@@ -4,6 +4,6 @@ public class Test {
 
                 int res = 1 + 1;
                 //显示
-                System.out.printLn("结果=" + res);
+                System.out.println("结果=" + res);
         }
 }
