@@ -1,0 +1,10 @@
+int abcclass = 10;
+int n = 40;
+int N = 50;
+System.out.println("n=" + n);
+System.out.println("N=" + N);
+
+int abc = 100;
+int aBc = 200;
+
+int a b = 300;
